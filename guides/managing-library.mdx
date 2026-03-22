@@ -21,9 +21,10 @@ Reseed can fetch skills from any public GitHub repository. It walks the repo's d
 reseed install user/repo              # all skills from the repo
 reseed install user/repo/skill-name   # a specific skill
 reseed install user/repo@v1.0         # pinned to a tag
+reseed install user/repo user2/repo2  # multiple sources at once
 ```
 
-Installed skills are tracked in `reseed.yaml` so reseed can update them later.
+Installed skills are tracked in `reseed.yaml` so reseed can update them later with `reseed fetch`.
 
 ## Listing your skills
 
@@ -35,14 +36,10 @@ This lists all skills in your library. External skills (fetched from GitHub) are
 
 ## Organizing with packs
 
-Group related skills in `reseed.yaml`:
+Create packs interactively:
 
-```yaml
-packs:
-  frontend:
-    - frontend-design
-    - css-reset
-    - accessibility
+```bash
+reseed pack frontend
 ```
 
-See [Packs](/concepts/packs) for details.
+This opens a selector showing all skills in your library. See [Packs](/concepts/packs) for details.

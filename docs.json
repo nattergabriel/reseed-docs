@@ -65,6 +65,7 @@
               "commands/install",
               "commands/fetch",
               "commands/library",
+              "commands/pack",
               "commands/add",
               "commands/sync",
               "commands/version"

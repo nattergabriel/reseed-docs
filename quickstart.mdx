@@ -18,19 +18,20 @@ Pull in open source skills from GitHub:
 
 ```bash
 reseed install anthropics/skills/frontend-design
+reseed install user/repo user2/repo2   # multiple sources at once
 ```
 
 Or create your own by adding a folder with a `SKILL.md` file to your library's `skills/` directory.
 
 ## 3. Add skills to a project
 
-From inside a project directory:
+From inside a project directory, run `reseed add` for an interactive selector, or specify skills by name:
 
 ```bash
-reseed add frontend-design             # add a single skill
-reseed add skill-a skill-b             # add multiple at once
-reseed add my-pack skill-a             # mix packs and skills
-reseed add --all                       # add everything in your library
+reseed add                               # interactive selection
+reseed add skill-a skill-b               # add by name
+reseed add my-pack skill-a               # mix packs and skills
+reseed add --all                         # add everything in your library
 reseed --dir .claude/skills add skill-a  # custom skills directory
 ```
 
