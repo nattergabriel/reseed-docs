@@ -5,10 +5,11 @@ description: "Get up and running with reseed in under a minute"
 
 ## 1. Create your library
 
-Pick a directory to store your skills. This only needs to be done once.
+This only needs to be done once.
 
 ```bash
-reseed init ~/my-skills
+reseed init ~/my-skills       # specific directory
+reseed init                   # or use the current directory
 ```
 
 ## 2. Install some skills
@@ -26,16 +27,20 @@ Or create your own by adding a folder with a `SKILL.md` file to your library's `
 From inside a project directory:
 
 ```bash
-reseed add frontend-design
+reseed add frontend-design             # add a single skill
+reseed add skill-a skill-b             # add multiple at once
+reseed add my-pack skill-a             # mix packs and skills
+reseed add --all                       # add everything in your library
+reseed --dir .claude/skills add skill-a  # custom skills directory
 ```
 
-This copies the skill into `.agents/skills/` where your AI agent can find it. Commit it to git and your whole team benefits.
+This copies skills into `.agents/skills/` (or the directory specified with `--dir`) where your AI agent can find them. Commit them to git and your whole team benefits.
 
 ## 4. Keep things up to date
 
 When open source skills get updated upstream:
 
 ```bash
-reseed update    # fetch latest into your library
-reseed sync      # push library changes into the current project
+reseed fetch    # fetch latest into your library
+reseed sync     # push library changes into the current project
 ```

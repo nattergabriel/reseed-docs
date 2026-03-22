@@ -8,7 +8,7 @@ description: "Keep your skills up to date across library and projects"
 When open source skills get updated on GitHub, pull the latest versions into your library:
 
 ```bash
-reseed update
+reseed fetch
 ```
 
 This fetches new versions for all external skills marked as `latest` in `reseed.yaml`. Skills pinned to a specific tag are skipped.
@@ -26,7 +26,7 @@ Sync matches skills by name. If a skill in the project's `.agents/skills/` has t
 ## Typical workflow
 
 ```bash
-reseed update    # fetch latest from GitHub into library
+reseed fetch    # fetch latest from GitHub into library
 cd my-project
 reseed sync      # push library changes into this project
 git add .agents/skills/
@@ -44,4 +44,4 @@ sources:
     version: v1.0
 ```
 
-Pinned skills are skipped during `reseed update`. Change the version to `latest` to resume automatic updates.
+Pinned skills are skipped during `reseed fetch`. Change the version to `latest` to resume automatic updates.

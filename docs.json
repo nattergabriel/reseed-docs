@@ -63,13 +63,10 @@
             "pages": [
               "commands/init",
               "commands/install",
-              "commands/add",
-              "commands/remove",
-              "commands/update",
-              "commands/sync",
+              "commands/fetch",
               "commands/library",
-              "commands/list",
-              "commands/inspect",
+              "commands/add",
+              "commands/sync",
               "commands/version"
             ]
           }

@@ -1,24 +1,19 @@
 ---
 title: "Using skills in projects"
-description: "How to add, remove, and list skills in a project"
+description: "How to add and manage skills in a project"
 ---
 
 ## Adding skills
 
-From inside a project directory, add a skill or pack from your library:
+From inside a project directory, add skills or packs from your library:
 
 ```bash
-reseed add skill-name
-reseed add my-pack
+reseed add skill-a skill-b             # add one or more skills
+reseed add my-pack skill-a             # mix packs and skills
+reseed add --all                       # add everything in your library
 ```
 
-This copies the skill into `.agents/skills/` where your AI agent can find it.
-
-To add every skill in your library at once:
-
-```bash
-reseed add --all
-```
+This copies skills into `.agents/skills/` where your AI agent can find them.
 
 ## Custom skills directory
 
@@ -28,22 +23,8 @@ By default, reseed installs skills to `.agents/skills/`. If your agent reads fro
 reseed --dir .claude/skills add skill-name
 ```
 
-This flag works with all project commands (`add`, `remove`, `list`, `sync`).
-
-## Listing installed skills
-
-```bash
-reseed list
-```
-
-## Removing skills
-
-```bash
-reseed remove skill-name
-```
-
-This deletes the skill directory from the project.
+This flag works with all project commands (`add`, `sync`).
 
 ## Committing to git
 
-After adding skills, commit the `.agents/skills/` directory to git. Your teammates get the skills automatically without needing reseed installed - any compatible agent reads them directly.
+After adding skills, commit the `.agents/skills/` directory to git. Your teammates get the skills automatically. Any compatible agent reads them directly.
