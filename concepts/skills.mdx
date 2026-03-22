@@ -1,0 +1,57 @@
+---
+title: "Skills"
+description: "What a skill is and how it works"
+---
+
+A skill is a directory containing a `SKILL.md` file. That file holds instructions that AI agents read when they run.
+
+## What a skill looks like
+
+A minimal skill is just one file:
+
+```
+code-review/
+  SKILL.md
+```
+
+A skill can also include supporting files that `SKILL.md` references:
+
+```
+frontend-design/
+  SKILL.md
+  style-guide.md
+  component-patterns.md
+  examples/
+    button.tsx
+```
+
+Reseed copies the entire directory when installing a skill into a project.
+
+## The SKILL.md file
+
+`SKILL.md` is a plain markdown file with instructions for AI agents. The content is up to you - it can describe a process, define coding standards, provide context about a codebase, or give step-by-step instructions for a task.
+
+```markdown
+# Code review
+
+When reviewing code, check for the following:
+
+1. Functions longer than 40 lines should be broken up.
+2. All public functions need docstrings.
+3. No direct database calls outside the `db/` package.
+```
+
+## Where skills live
+
+Skills exist in two places:
+
+- **In your library** (`~/my-skills/skills/<name>/`) - your personal collection, not committed to project repos.
+- **In a project** (`.agents/skills/<name>/`) - where agents look for skills, committed to git.
+
+Reseed copies skills from library to project. The two copies are independent. Editing a skill in your library does not automatically update projects - run `reseed sync` for that.
+
+## Agent compatibility
+
+Skills installed by reseed work with any agent that reads `.agents/skills/`, including Claude Code, Cursor, Copilot, Codex, Gemini CLI, and [30+ others](https://agentskills.io).
+
+Teammates don't need reseed installed. Once `.agents/skills/` is committed to git, any compatible agent picks up the skills automatically.

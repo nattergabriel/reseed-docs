@@ -1,0 +1,41 @@
+---
+title: "Quickstart"
+description: "Get up and running with reseed in under a minute"
+---
+
+## 1. Create your library
+
+Pick a directory to store your skills. This only needs to be done once.
+
+```bash
+reseed init ~/my-skills
+```
+
+## 2. Install some skills
+
+Pull in open source skills from GitHub:
+
+```bash
+reseed install anthropics/skills/frontend-design
+```
+
+Or create your own by adding a folder with a `SKILL.md` file to your library's `skills/` directory.
+
+## 3. Add skills to a project
+
+From inside a project directory:
+
+```bash
+reseed add frontend-design
+```
+
+This copies the skill into `.agents/skills/` where your AI agent can find it. Commit it to git and your whole team benefits.
+
+## 4. Keep things up to date
+
+When open source skills get updated upstream:
+
+```bash
+reseed update    # fetch latest into your library
+reseed sync      # push library changes into the current project
+```

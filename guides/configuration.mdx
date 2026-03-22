@@ -1,0 +1,44 @@
+---
+title: "Configuration"
+description: "The reseed.yaml config file"
+---
+
+## reseed.yaml
+
+Your library's configuration lives in `reseed.yaml` at the root of the library directory. It tracks external skill sources and pack definitions.
+
+```yaml
+sources:
+  frontend-design:
+    source: anthropics/skills/frontend-design
+    version: latest
+  sql-safety:
+    source: user/repo/sql-safety
+    version: v1.0
+
+packs:
+  frontend:
+    - frontend-design
+    - css-reset
+    - accessibility
+  backend:
+    - sql-safety
+    - logging
+```
+
+## Sources
+
+Each entry in `sources` maps a skill name to its GitHub origin:
+
+- **source** - the GitHub path in `user/repo/skill` format
+- **version** - either a tag name or `latest`
+
+Skills set to `latest` are updated when you run `reseed update`. Pinned skills are skipped.
+
+## Packs
+
+Each entry in `packs` maps a name to a list of skills. A pack can include both local and external skills. Use `reseed add pack-name` to install all skills in a pack at once.
+
+## Global config
+
+Reseed stores a small global config at `~/.config/reseed` that records where your library is located. This is set automatically when you run `reseed init`.

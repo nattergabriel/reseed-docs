@@ -1,0 +1,83 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "reseed",
+  "theme": "palm",
+  "appearance": {
+    "default": "dark",
+    "strict": true
+  },
+  "colors": {
+    "primary": "#59617F",
+    "dark": "#59617F"
+  },
+  "favicon": "/favicon.svg",
+  "logo": {
+    "light": "/logo/light.svg",
+    "dark": "/logo/dark.svg"
+  },
+  "navbar": {
+    "primary": {
+      "type": "github",
+      "href": "https://github.com/nattergabriel/reseed"
+    }
+  },
+  "footer": {
+    "socials": {
+      "github": "https://github.com/nattergabriel/reseed"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "installation",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Core Concepts",
+            "pages": [
+              "concepts/library",
+              "concepts/skills",
+              "concepts/packs"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/managing-library",
+              "guides/using-skills-in-projects",
+              "guides/updating-and-syncing",
+              "guides/configuration"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Command Reference",
+        "groups": [
+          {
+            "group": "Commands",
+            "pages": [
+              "commands/init",
+              "commands/install",
+              "commands/add",
+              "commands/remove",
+              "commands/update",
+              "commands/sync",
+              "commands/library",
+              "commands/list",
+              "commands/inspect",
+              "commands/version"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

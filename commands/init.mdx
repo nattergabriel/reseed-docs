@@ -1,0 +1,22 @@
+---
+title: "reseed init"
+description: "Initialize a skill library"
+---
+
+```bash
+reseed init [path]
+```
+
+Creates a skill library at the given path, or the current directory if no path is provided. If the directory already contains skills, they are recognized automatically.
+
+This command:
+- Creates a `skills/` subdirectory
+- Generates a `reseed.yaml` config with commented-out examples
+- Registers the library path globally at `~/.config/reseed`
+
+## Examples
+
+```bash
+reseed init ~/my-skills
+reseed init                   # uses current directory
+```

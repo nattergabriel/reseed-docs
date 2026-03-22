@@ -1,0 +1,24 @@
+---
+title: "reseed install"
+description: "Fetch skills from a GitHub repo into your library"
+---
+
+```bash
+reseed install <user/repo[/skill][@version]>
+```
+
+Downloads skills from a GitHub repository and adds them to your library. Skills are tracked in `reseed.yaml` so they can be updated later.
+
+## Examples
+
+```bash
+reseed install user/repo              # all skills from the repo
+reseed install user/repo/my-skill     # one specific skill
+reseed install user/repo@v2.0         # pin to a tag
+```
+
+## How it works
+
+Reseed downloads the repository as a tarball, walks the directory tree, and extracts every folder containing a `SKILL.md` file. Skills are flattened into your library's `skills/` directory regardless of their depth in the original repo.
+
+Each installed skill is recorded in `reseed.yaml` with its source path and version.

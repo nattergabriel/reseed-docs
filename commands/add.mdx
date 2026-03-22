@@ -1,0 +1,31 @@
+---
+title: "reseed add"
+description: "Add a skill or pack to the current project"
+---
+
+```bash
+reseed add [skill-or-pack]
+reseed add --all
+```
+
+Copies skills from your library into the project's `.agents/skills/` directory.
+
+## Flags
+
+- `--all` - Add every skill from the library
+
+## Examples
+
+```bash
+reseed add frontend-design     # add a single skill
+reseed add my-pack             # add all skills in a pack
+reseed add --all               # add everything in the library
+```
+
+## Global flags
+
+- `--dir` - Override the skills directory (default `.agents/skills/`)
+
+```bash
+reseed --dir .claude/skills add frontend-design
+```

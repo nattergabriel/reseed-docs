@@ -1,0 +1,42 @@
+---
+title: "Packs"
+description: "Bundle related skills together"
+---
+
+A pack is a named group of skills defined in your `reseed.yaml`. Instead of adding skills one by one, you can add an entire pack with a single command.
+
+## Defining packs
+
+Add a `packs` section to your library's `reseed.yaml`:
+
+```yaml
+packs:
+  frontend:
+    - frontend-design
+    - css-reset
+    - accessibility
+  python-base:
+    - python-typing
+    - python-testing
+    - commit-style
+```
+
+A pack can include both local and external skills.
+
+## Using packs
+
+```bash
+reseed add frontend
+```
+
+This copies all three skills (`frontend-design`, `css-reset`, `accessibility`) into the project.
+
+## Inspecting packs
+
+To see what's in a pack:
+
+```bash
+reseed inspect frontend
+```
+
+This lists all skills in the pack and shows whether each one is present in your library or missing.

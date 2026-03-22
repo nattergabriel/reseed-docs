@@ -1,0 +1,17 @@
+---
+title: "reseed sync"
+description: "Sync project skills from your library"
+---
+
+```bash
+reseed sync
+```
+
+Re-copies skills from the library into the current project. Matches by name - if a skill in `.agents/skills/` has the same name as one in your library, it gets overwritten with the library version. Skills not in the library are left untouched.
+
+## Example output
+
+```
+  ~ frontend-design
+  ~ code-review
+```

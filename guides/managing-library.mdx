@@ -1,0 +1,48 @@
+---
+title: "Managing your library"
+description: "How to organize and maintain your skill library"
+---
+
+## Adding local skills
+
+Create a directory inside your library's `skills/` folder with a `SKILL.md` file:
+
+```bash
+mkdir ~/my-skills/skills/my-skill
+```
+
+Then write your `SKILL.md` with whatever instructions you want your AI agent to follow. The skill is immediately available to add to any project.
+
+## Installing skills from GitHub
+
+Reseed can fetch skills from any public GitHub repository. It walks the repo's directory tree and finds every folder containing a `SKILL.md`.
+
+```bash
+reseed install user/repo              # all skills from the repo
+reseed install user/repo/skill-name   # a specific skill
+reseed install user/repo@v1.0         # pinned to a tag
+```
+
+Installed skills are tracked in `reseed.yaml` so reseed can update them later.
+
+## Listing your skills
+
+```bash
+reseed library
+```
+
+This lists all skills in your library. External skills (fetched from GitHub) are marked with `(external)`.
+
+## Organizing with packs
+
+Group related skills in `reseed.yaml`:
+
+```yaml
+packs:
+  frontend:
+    - frontend-design
+    - css-reset
+    - accessibility
+```
+
+See [Packs](/concepts/packs) for details.
