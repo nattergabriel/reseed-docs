@@ -68,6 +68,7 @@
               "commands/pack",
               "commands/add",
               "commands/sync",
+              "commands/config",
               "commands/version"
             ]
           }

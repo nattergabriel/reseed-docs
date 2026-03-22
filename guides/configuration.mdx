@@ -41,4 +41,11 @@ Each entry in `packs` maps a name to a list of skills. A pack can include both l
 
 ## Global config
 
-Reseed stores a small global config at `~/.config/reseed` that records where your library is located. This is set automatically when you run `reseed init`.
+Reseed stores a global config at `~/.config/reseed` with your library path and preferences. Use `reseed config` to manage it:
+
+```bash
+reseed config dir .claude/skills   # change default skills directory
+reseed config dir                  # show current value
+```
+
+The library path is set automatically when you run `reseed init`. The `--dir` flag on any command overrides the configured default for that invocation.

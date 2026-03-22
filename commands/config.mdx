@@ -1,0 +1,25 @@
+---
+title: "reseed config"
+description: "Get or set configuration"
+---
+
+```bash
+reseed config <key> [value]
+```
+
+Get or set global configuration values stored at `~/.config/reseed`.
+
+## Available keys
+
+| Key | Description | Default |
+|-----|-------------|---------|
+| `dir` | Skills directory in projects | `.agents/skills` |
+
+## Examples
+
+```bash
+reseed config dir                  # show current value
+reseed config dir .claude/skills   # set default skills directory
+```
+
+The `--dir` flag on any command overrides the configured default for that invocation.
