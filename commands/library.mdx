@@ -7,12 +7,16 @@ description: "List all skills in your library"
 reseed library
 ```
 
-Lists all skills in your library. External skills (fetched from GitHub) are marked with `(external)`.
+Lists all skills in your library, grouped by local and external. External skills show their source and version.
 
 ## Example output
 
 ```
-  frontend-design (external)
+Local:
   code-review
   python-typing
+
+External:
+  frontend-design  (user/repo/src/skills/frontend-design, latest)
+  writing-style    (user/repo/writing-style, v1.0)
 ```

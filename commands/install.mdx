@@ -12,11 +12,34 @@ Downloads skills from GitHub repositories and adds them to your library. Skills 
 ## Examples
 
 ```bash
-reseed install user/repo              # all skills from the repo
-reseed install user/repo/my-skill     # one specific skill
-reseed install user/repo@v2.0         # pin to a tag
-reseed install user/repo user2/repo2  # multiple sources at once
+reseed install user/repo                    # all skills from the repo
+reseed install user/repo/src/skills/commit  # one specific skill
+reseed install user/repo/src/skills         # all skills under a directory
+reseed install user/repo@v2.0              # pin to a tag
+reseed install user/repo user2/repo2       # multiple sources at once
 ```
+
+You can paste paths directly from GitHub URLs - `tree/main/` and `blob/main/` prefixes are stripped automatically.
+
+```bash
+reseed install user/repo/tree/main/src/skills  # same as user/repo/src/skills
+```
+
+## Flags
+
+| Flag | Short | Description |
+| --- | --- | --- |
+| `--pack` | `-p` | Create a pack with all installed skills |
+
+### Creating a pack on install
+
+When installing multiple skills from a directory, use `--pack` to bundle them into a named pack:
+
+```bash
+reseed install user/repo/src/skills --pack frontend
+```
+
+This installs all skills under `src/skills/` and creates a pack called `frontend` containing them.
 
 ## How it works
 
