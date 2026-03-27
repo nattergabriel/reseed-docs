@@ -18,28 +18,27 @@ Then write your `SKILL.md` with whatever instructions you want your AI agent to 
 Reseed can fetch skills from any public GitHub repository. It walks the repo's directory tree and finds every folder containing a `SKILL.md`.
 
 ```bash
-reseed install user/repo              # all skills from the repo
-reseed install user/repo/skill-name   # a specific skill
-reseed install user/repo@v1.0         # pinned to a tag
-reseed install user/repo user2/repo2  # multiple sources at once
+reseed install user/repo                    # all skills from the repo
+reseed install user/repo/skill-name         # a specific skill
+reseed install user/repo@v1.0               # pinned to a tag
+reseed install user/repo user2/repo2        # multiple sources at once
+reseed install user/repo/src/skills -p kit  # into a pack
 ```
 
-Installed skills are tracked in `reseed.yaml` so reseed can update them later with `reseed fetch`.
+## Browsing your library
 
-## Listing your skills
+Run `reseed` with no subcommand to open an interactive TUI browser with tabs for skills and packs:
 
 ```bash
-reseed library
+reseed
 ```
 
-This lists all skills in your library. External skills (fetched from GitHub) are marked with `(external)`.
+Or use `reseed list` for a non-interactive listing:
+
+```bash
+reseed list
+```
 
 ## Organizing with packs
 
-Create packs interactively:
-
-```bash
-reseed pack frontend
-```
-
-This opens a selector showing all skills in your library. See [Packs](/concepts/packs) for details.
+Packs are directories in your library that group related skills together. Create one by organizing skills into a subdirectory, or use the `--pack` flag when installing from GitHub. See [Packs](/concepts/packs) for details.

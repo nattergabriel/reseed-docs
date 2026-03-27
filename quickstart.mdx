@@ -25,10 +25,10 @@ Or create your own by adding a folder with a `SKILL.md` file to your library's `
 
 ## 3. Add skills to a project
 
-From inside a project directory, run `reseed add` for an interactive selector, or specify skills by name:
+From inside a project directory, run `reseed` to browse your library interactively, or specify skills by name:
 
 ```bash
-reseed add                               # interactive selection
+reseed                                   # interactive TUI browser
 reseed add skill-a skill-b               # add by name
 reseed add my-pack skill-a               # mix packs and skills
 reseed add --all                         # add everything in your library
@@ -39,9 +39,9 @@ This copies skills into `.agents/skills/` (or the directory specified with `--di
 
 ## 4. Keep things up to date
 
-When open source skills get updated upstream:
+When upstream skills change, install the latest and sync into your projects:
 
 ```bash
-reseed fetch    # fetch latest into your library
-reseed sync     # push library changes into the current project
+reseed install user/repo               # re-install latest into your library
+reseed sync                            # push library changes into the current project
 ```

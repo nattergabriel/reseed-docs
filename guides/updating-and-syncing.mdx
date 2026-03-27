@@ -3,15 +3,16 @@ title: "Updating and syncing"
 description: "Keep your skills up to date across library and projects"
 ---
 
-## Updating external skills
+## Updating skills from GitHub
 
-When open source skills get updated on GitHub, pull the latest versions into your library:
+When open source skills get updated on GitHub, re-install them to pull the latest versions into your library:
 
 ```bash
-reseed fetch
+reseed install user/repo              # re-install latest from the repo
+reseed install user/repo@v2.0         # update to a specific tag
 ```
 
-This fetches new versions for all external skills marked as `latest` in `reseed.yaml`. Skills pinned to a specific tag are skipped.
+Running `reseed install` again for the same source overwrites the existing skills in your library with the latest versions.
 
 ## Syncing projects
 
@@ -26,22 +27,19 @@ Sync matches skills by name. If a skill in the project's `.agents/skills/` has t
 ## Typical workflow
 
 ```bash
-reseed fetch    # fetch latest from GitHub into library
+reseed install user/repo    # pull latest from GitHub into library
 cd my-project
-reseed sync      # push library changes into this project
+reseed sync                 # push library changes into this project
 git add .agents/skills/
 git commit -m "update agent skills"
 ```
 
 ## Pinning versions
 
-To prevent a skill from being updated automatically, pin it to a specific tag in `reseed.yaml`:
+To keep a skill at a specific version, install it with a tag:
 
-```yaml
-sources:
-  frontend-design:
-    source: anthropics/skills/frontend-design
-    version: v1.0
+```bash
+reseed install user/repo@v1.0
 ```
 
-Pinned skills are skipped during `reseed fetch`. Change the version to `latest` to resume automatic updates.
+This installs the exact version at that tag. The skill won't change until you explicitly install a different version.

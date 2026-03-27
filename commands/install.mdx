@@ -7,7 +7,7 @@ description: "Fetch skills from GitHub repos into your library"
 reseed install <sources...>
 ```
 
-Downloads skills from GitHub repositories and adds them to your library. Skills are tracked in `reseed.yaml` so they can be updated later with `reseed fetch`.
+Downloads skills from GitHub repositories and adds them to your library.
 
 ## Examples
 
@@ -19,7 +19,7 @@ reseed install user/repo@v2.0              # pin to a tag
 reseed install user/repo user2/repo2       # multiple sources at once
 ```
 
-You can paste paths directly from GitHub URLs - `tree/main/` and `blob/main/` prefixes are stripped automatically.
+You can paste paths directly from GitHub URLs. The `tree/main/` and `blob/main/` prefixes are stripped automatically.
 
 ```bash
 reseed install user/repo/tree/main/src/skills  # same as user/repo/src/skills
@@ -39,10 +39,8 @@ When installing multiple skills from a directory, use `--pack` to bundle them in
 reseed install user/repo/src/skills --pack frontend
 ```
 
-This installs all skills under `src/skills/` and creates a pack called `frontend` containing them.
+This installs all skills under `src/skills/` and groups them into a pack directory called `frontend` in your library.
 
 ## How it works
 
 Reseed downloads each repository as a tarball, walks the directory tree, and extracts every folder containing a `SKILL.md` file. Skills are flattened into your library's `skills/` directory regardless of their depth in the original repo.
-
-Each installed skill is recorded in `reseed.yaml` with its source path and version.

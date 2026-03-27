@@ -1,0 +1,25 @@
+---
+title: "reseed remove"
+description: "Remove skills from the current project"
+---
+
+```bash
+reseed remove <skills...>
+```
+
+Removes one or more skills from the project's skills directory.
+
+## Examples
+
+```bash
+reseed remove code-review
+reseed remove skill-a skill-b
+```
+
+## Global flags
+
+- `--dir` Override the skills directory (default `.agents/skills/`)
+
+```bash
+reseed --dir .claude/skills remove code-review
+```

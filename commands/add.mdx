@@ -4,40 +4,23 @@ description: "Add skills or packs to the current project"
 ---
 
 ```bash
-reseed add [skills or packs...]
+reseed add <skills or packs...>
 reseed add --all
-reseed add
 ```
 
-Copies skills or packs from your library into the project's `.agents/skills/` directory. Run without arguments for an interactive selector.
+Copies skills or packs from your library into the project's `.agents/skills/` directory.
 
-## Interactive mode
-
-Running `reseed add` with no arguments opens an interactive selector showing all available packs and skills:
-
-```
-Select skills to add (space to toggle, enter to confirm):
-
-Packs:
-> [x] frontend (3 skills)
-  [ ] python-base (2 skills)
-
-Skills:
-  [ ] accessibility
-  [ ] code-review
-  [x] frontend-design
-
-q/esc to cancel
-```
+For interactive browsing, use the [`reseed`](/introduction) root command instead.
 
 ## Flags
 
-- `--all` - Add every skill from the library
+| Flag | Short | Description |
+| --- | --- | --- |
+| `--all` | | Add every skill from the library |
 
 ## Examples
 
 ```bash
-reseed add                               # interactive selection
 reseed add skill-a skill-b               # add by name
 reseed add my-pack skill-a               # mix packs and skills
 reseed add --all                         # add everything in the library
@@ -45,7 +28,7 @@ reseed add --all                         # add everything in the library
 
 ## Global flags
 
-- `--dir` - Override the skills directory (default `.agents/skills/`)
+- `--dir` Override the skills directory (default `.agents/skills/`)
 
 ```bash
 reseed --dir .claude/skills add skill-a

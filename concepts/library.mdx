@@ -3,20 +3,26 @@ title: "The library"
 description: "Your central collection of skills"
 ---
 
-Your library is a directory on your machine where all your skills live. It's the central place you manage everything from - both skills you've written yourself and ones you've pulled from GitHub.
+Your library is a directory on your machine where all your skills live. It's the central place you manage everything from, both skills you've written yourself and ones you've pulled from GitHub.
 
 ## Structure
 
 ```
 ~/my-skills/
-  reseed.yaml          # configuration (sources + packs)
   skills/
-    my-custom-skill/   # a skill you wrote
+    my-custom-skill/     # a standalone skill
       SKILL.md
-    frontend-design/   # a skill fetched from GitHub
+    frontend-design/     # a skill fetched from GitHub
       SKILL.md
       style-guide.md
+    frontend/            # a pack (directory of skills)
+      accessibility/
+        SKILL.md
+      css-reset/
+        SKILL.md
 ```
+
+Skills are directories containing a `SKILL.md` file. Packs are directories containing skills. See [Skills](/concepts/skills) and [Packs](/concepts/packs) for details.
 
 ## Creating a library
 
@@ -24,17 +30,10 @@ Your library is a directory on your machine where all your skills live. It's the
 reseed init ~/my-skills
 ```
 
-This creates the directory structure and a `reseed.yaml` config file with commented-out examples. It also registers the library globally so reseed knows where to find it.
+This creates the `skills/` directory and registers the library path globally at `~/.config/reseed` so reseed knows where to find it.
 
-You only need one library. All your skills (local and external) live here.
+You only need one library. All your skills live here.
 
 ## The library as a git repo
 
 Your library can itself be a git repo. This is useful if you want to version your skills or share your collection across machines. Reseed doesn't require this, but it works naturally since the library is just a directory of files.
-
-## Local vs external skills
-
-- **Local skills** are ones you create by adding a folder with a `SKILL.md` to `skills/`. Reseed doesn't track these in `reseed.yaml`.
-- **External skills** are fetched from GitHub via `reseed install`. They're tracked in `reseed.yaml` so reseed knows where they came from and can update them.
-
-Both types are used the same way when adding to projects.

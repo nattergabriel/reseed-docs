@@ -29,7 +29,7 @@ Reseed copies the entire directory when installing a skill into a project.
 
 ## The SKILL.md file
 
-`SKILL.md` is a plain markdown file with instructions for AI agents. The content is up to you - it can describe a process, define coding standards, provide context about a codebase, or give step-by-step instructions for a task.
+`SKILL.md` is a plain markdown file with instructions for AI agents. The content is up to you. It can describe a process, define coding standards, provide context about a codebase, or give step-by-step instructions for a task.
 
 ```markdown
 # Code review
@@ -45,10 +45,10 @@ When reviewing code, check for the following:
 
 Skills exist in two places:
 
-- **In your library** (`~/my-skills/skills/<name>/`) - your personal collection, not committed to project repos.
-- **In a project** (`.agents/skills/<name>/`) - where agents look for skills, committed to git.
+- **In your library** (`~/my-skills/skills/<name>/`). Your personal collection, not committed to project repos.
+- **In a project** (`.agents/skills/<name>/`). Where agents look for skills, committed to git.
 
-Reseed copies skills from library to project. The two copies are independent. Editing a skill in your library does not automatically update projects - run `reseed sync` for that.
+Reseed copies skills from library to project. The two copies are independent. Editing a skill in your library does not automatically update projects. Run `reseed sync` for that.
 
 ## Agent compatibility
 

@@ -5,16 +5,32 @@ description: "How to add and manage skills in a project"
 
 ## Adding skills
 
-From inside a project directory, run `reseed add` for an interactive selector, or specify skills by name:
+From inside a project directory, run `reseed` for an interactive TUI browser, or specify skills by name:
 
 ```bash
-reseed add                               # interactive selection
+reseed                                   # interactive TUI browser
 reseed add skill-a skill-b               # add by name
 reseed add my-pack skill-a               # mix packs and skills
 reseed add --all                         # add everything in your library
 ```
 
-The interactive selector shows both packs and individual skills. This copies skills into `.agents/skills/` where your AI agent can find them.
+The interactive TUI shows tabs for skills and packs. Use arrow keys to navigate, space/enter to toggle, and tab to switch between skills and packs. This copies skills into `.agents/skills/` where your AI agent can find them.
+
+## Removing skills
+
+Remove skills you no longer need from a project:
+
+```bash
+reseed remove skill-a skill-b
+```
+
+## Checking installed skills
+
+See what's currently installed in a project:
+
+```bash
+reseed status
+```
 
 ## Custom skills directory
 
@@ -24,7 +40,7 @@ By default, reseed installs skills to `.agents/skills/`. If your agent reads fro
 reseed --dir .claude/skills add skill-name
 ```
 
-This flag works with all project commands (`add`, `sync`).
+This flag works with all project commands (`add`, `remove`, `sync`, `status`).
 
 ## Committing to git
 

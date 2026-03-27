@@ -1,51 +1,34 @@
 ---
 title: "Configuration"
-description: "The reseed.yaml config file"
+description: "Global config and the --dir flag"
 ---
-
-## reseed.yaml
-
-Your library's configuration lives in `reseed.yaml` at the root of the library directory. It tracks external skill sources and pack definitions.
-
-```yaml
-sources:
-  frontend-design:
-    source: anthropics/skills/frontend-design
-    version: latest
-  sql-safety:
-    source: user/repo/sql-safety
-    version: v1.0
-
-packs:
-  frontend:
-    - frontend-design
-    - css-reset
-    - accessibility
-  backend:
-    - sql-safety
-    - logging
-```
-
-## Sources
-
-Each entry in `sources` maps a skill name to its GitHub origin:
-
-- **source** - the GitHub path in `user/repo/skill` format
-- **version** - either a tag name or `latest`
-
-Skills set to `latest` are updated when you run `reseed fetch`. Pinned skills are skipped.
-
-## Packs
-
-Each entry in `packs` maps a name to a list of skills. A pack can include both local and external skills. Use `reseed add pack-name` to install all skills in a pack at once.
 
 ## Global config
 
-Reseed stores a global config at `~/.config/reseed` with your library path and preferences. Use `reseed config` to manage it:
+Reseed stores a global config at `~/.config/reseed` with your library path and default skills directory.
 
-```bash
-reseed config dir .claude/skills   # change default skills directory
-reseed config dir                  # show current value
+```yaml
+library: /Users/you/my-skills      # set by reseed init
+dir: .agents/skills                # default skills directory
 ```
 
-The library path is set automatically when you run `reseed init`. The `--dir` flag on any command overrides the configured default for that invocation.
+Use `reseed config` to manage it:
+
+```bash
+reseed config dir                  # show current value
+reseed config dir .claude/skills   # change default skills directory
+```
+
+The library path is set automatically when you run `reseed init`.
+
+## The --dir flag
+
+The `--dir` flag on any command overrides the configured default skills directory for that invocation:
+
+```bash
+reseed --dir .claude/skills add skill-name
+reseed --dir .claude/skills sync
+reseed --dir .claude/skills status
+```
+
+This is useful if your agent reads skills from a different directory than the default `.agents/skills/`.
